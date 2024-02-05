@@ -6,4 +6,4 @@
 5. git checkout -b nazwa_zadania (nazwa brancha)
 6. git add .
 7. git commit -m"siurek"
-8. git push origin dev
+8. git push origin <branch stworzony>
