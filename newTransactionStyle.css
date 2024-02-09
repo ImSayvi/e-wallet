@@ -1,0 +1,73 @@
+body{ /*  później przy mergowaniu zamienić body na tag <section> w html */
+background-color: #55718e;
+font-family: 'Montserrat', sans-serif;
+color: #eeeded;
+}
+
+.transactionContainer{
+    text-align: center;
+    align-items: center;
+    margin-top: 15%;
+    
+}
+
+.tittle{
+    font-weight: 100;
+    font-size: 36px;
+}
+
+.transactionContainer label{
+    font-size: 25px;
+}
+
+.adnotations{
+    font-size: 12px;
+    font-style: italic;
+    margin-top: -1px;
+    font-weight: 100;
+}
+
+.name, .amount, .category, .buttons{
+    margin-bottom: 20px;
+}
+
+select, input{
+    border: none;
+    border-radius: 5px;
+    width: 600px;
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+button{
+    height: 40px;
+    width: 130px;
+    background: none;
+    border: 1px solid #eeeded;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #eeeded;
+    padding: 5px
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.buttons i{
+    margin-right: 5px;
+    font-size: 20px;
+    
+    
+}
+
+button:hover{
+    transition: 1s;
+    color: #4e4e4e;
+    background: #eeeded;
+    border: 1px solid #4e4e4e;
+}
