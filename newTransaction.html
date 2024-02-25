@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Transaction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/newTransactionStyle.css">
+</head>
+
+<body>
+    <section class="newTransaction">
+    <div class="transactionContainer">
+        <div class="tittle">
+            <p>DODAJ NOWĄ TRANSAKCJĘ</p>
+        </div>
+        <div class="name">
+            <label for="nameSelect">Nazwa:</label>
+            <p class="adnotations">(podaj nazwę transakcji)</p>
+            <input id="nameInput" type="text">
+        </div>
+        <div class="amount">
+            <label for="amountSelect">Kwota:</label>
+            <p class="adnotations">(podaj kwotę transakcji. Jeśli dodajesz wydatek, postaw znak minusa na początku
+                kwoty)</p>
+            <input id="amountInput" type="text">
+        </div>
+        <div class="category">
+            <label for="categorySelect">Wybierz kategorię:</label>
+            <p class="adnotations">([+] oznacza przychód, [-] oznacza wydatek])</p>
+            <select name="categories" id="categoryInput">
+                <option value="none"></option>
+                <option value="income">[+] przychód</option>
+                <option value="shopping">[-] zakupy</option>
+                <option value="fuel">[-] paliwo</option>
+                <option value="other">[-] inne</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <button id="save"><i class="fa-regular fa-floppy-disk"></i>Zapisz</button>
+            <button id="cancel"><i class="fa-solid fa-xmark"></i>Anuluj</button>
+        </div>
+    </div>
+</section>
+<script src="https://kit.fontawesome.com/988d321f51.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

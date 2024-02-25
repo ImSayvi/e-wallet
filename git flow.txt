@@ -1,0 +1,9 @@
+1. cd existing_repo
+2. git remote add origin https://gitlab.com/learning7714005/e-wallet.git
+	a. git clone repo
+3. git branch -M main
+4. git pull origin dev
+5. git checkout -b nazwa_zadania (nazwa brancha)
+6. git add .
+7. git commit -m"siurek"
+8. git push origin <branch stworzony>
