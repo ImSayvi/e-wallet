@@ -7,7 +7,7 @@
 background-color: #55718e;
 font-family: 'Montserrat', sans-serif;
 color: #eeeded;
-display: none;                       /*zamiana na flex po wcisnieciu przycisku */
+display: none;                       /*zamiana na flex/none po wcisnieciu przycisku */
 position: fixed;
 top: 0;
 left: 0;
@@ -56,13 +56,13 @@ align-items: center;
 
 .buttons button{
     height: 40px;
-    width: 130px;
+    
     background: none;
     border: 1px solid #eeeded;
     border-radius: 3px;
     cursor: pointer;
     color: #eeeded;
-    padding: 5px
+    padding: 5px 25px;
 }
 
 .buttons{
