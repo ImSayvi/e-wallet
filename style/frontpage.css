@@ -126,4 +126,42 @@ li:last-child {
 	justify-content: space-around;
 	align-items: center;
 	flex-direction: column;
+	padding: 50px 0px 50px 0px;
+	min-height: 550px;
 }
+
+.dark, .light {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	vertical-align: top;
+	border: solid 1px aliceblue;
+	cursor: pointer;
+}
+
+.dark{
+	background-color: rgb(35, 39, 53);
+}
+
+.dark:hover{
+	background-color: black;
+	border: solid 1px aliceblue;
+}
+
+.light{
+	background-color: aliceblue;
+}
+
+.light:hover{
+	background-color: white;
+	border: solid 1px  rgb(35, 39, 53);
+}
+
+.availableFunds{
+	font-size: 50px;
+}
+
+.section_two .buttons{
+	margin: 30px;
+}
+
