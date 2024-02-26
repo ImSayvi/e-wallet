@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/frontpage.css">
+    <link rel="stylesheet" href="style/newTransactionStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>e-wallet</title>
+</head>
+
+<body>
+    <div class="containersWrap">
+    <div class="container">
+        <header class="header">
+            <h1 class="title"> <i class="fa-solid fa-wallet"></i> Wallet</h1>
+            <p class="subtitle">Twój osobisty menedżer finansów.</p>
+        </header>
+        <main class="content">
+            <div class="left_side">
+                <p class="content_title">LISTA TRANSAKCJI</p>
+                <div class="sections">
+                    <div class="section">
+                        <h2 class="arcTitles greens">Przychód:</h1>
+                        <ul>
+                            <li><span class="name"><i class="fa-solid fa-money-bill-1-wave"></i>fsedsdff</span><span class="incomeAmount">50zł<i class="fa-solid fa-xmark x"></i></span></li>
+                            <li><span class="name"><i class="fa-solid fa-money-bill-1-wave"></i>fsedsdff</span><span class="incomeAmount">50zł<i class="fa-solid fa-xmark x"></i></span></li>
+                            <li><span class="name"><i class="fa-solid fa-money-bill-1-wave"></i>fsedsdff</span><span class="incomeAmount">50zł<i class="fa-solid fa-xmark x"></i></span></li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <h2 class="arcTitles reds">Wydatki:</h1>
+                            <ul>
+                            <li><span class="name"><i class="fa-solid fa-cart-shopping"></i>zakupy</span><span class="expensesAmount">50zł<i class="fa-solid fa-xmark x"></i></span></li>
+                            <li><span class="name"><i class="fa-solid fa-gas-pump"></i>paliwo</span><span class="expensesAmount">50zł<i class="fa-solid fa-xmark x"></i></span></li>
+                            <li><span class="name"><i class="fa-solid fa-note-sticky"></i>inne</span><span class="expensesAmount">50zł<i class="fa-solid fa-xmark x"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right_side">
+                <div class="section_two"><p class="content_title">DOSTĘPNE ŚRODKI</p>
+                    <div class="availableFunds"><span>10000</span>zł</div>
+                    <div class="buttons"><button class="addT"><i class="fa-solid fa-plus"></i>Dodaj transakcję</button><button class="removeAll"><i class="fa-solid fa-trash"></i>Usuń wszystko</button></div>
+                    <div class="styleBtn"><p class="content_title">WYBIERZ STYL</p></div>
+                    <div class="styleBtn"><button class="dark"></button><button class="light"> </button></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+        <section class="newTransaction">
+            <div class="transactionContainer">
+                <div class="tittle">
+                    <p>DODAJ NOWĄ TRANSAKCJĘ</p>
+                </div>
+                <div class="name">
+                    <label for="nameSelect">Nazwa:</label>
+                    <p class="adnotations">(podaj nazwę transakcji)</p>
+                    <input id="nameInput" type="text">
+                </div>
+                <div class="amount">
+                    <label for="amountSelect">Kwota:</label>
+                    <p class="adnotations">(podaj kwotę transakcji. Jeśli dodajesz wydatek, postaw znak minusa na początku
+                        kwoty)</p>
+                    <input id="amountInput" type="text">
+                </div>
+                <div class="category">
+                    <label for="categorySelect">Wybierz kategorię:</label>
+                    <p class="adnotations">([+] oznacza przychód, [-] oznacza wydatek])</p>
+                    <select name="categories" id="categoryInput">
+                        <option value="none"></option>
+                        <option value="income">[+] przychód</option>
+                        <option value="shopping">[-] zakupy</option>
+                        <option value="fuel">[-] paliwo</option>
+                        <option value="other">[-] inne</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                    <button id="save"><i class="fa-regular fa-floppy-disk"></i>Zapisz</button>
+                    <button id="cancel"><i class="fa-solid fa-xmark"></i>Anuluj</button>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+        <script src="https://kit.fontawesome.com/f7923797cb.js" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
