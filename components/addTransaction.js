@@ -1,21 +1,54 @@
-const addTransactionButton = document.getElementById('addT')
-const newTransactionSection = document.getElementById('newTransaction')
-const saveButton = document.getElementById('save')
-const cancelButton = document.getElementById('cancel')
-const nameTransaction = document.getElementById('nameInput')
-const amountTransaction = document.getElementById('amountInput')
-const category = document.getElementById('categoryInput')
+let addTransactionButton = document.getElementById('addT')
+let newTransactionSection = document.getElementById('newTransaction')
+let saveButton = document.getElementById('save')
+let cancelButton = document.getElementById('cancel')
 
-addTransactionButton.addEventListener('click', () => {
-	if ((newTransactionSection.style.display = 'none')) {
-		newTransactionSection.style.display = 'block'
-	} else {
-		newTransactionSection.style.display = 'none'
+function addNewExpense() {
+	let nameTransaction = document.getElementById('nameInput').value
+	let amountTransaction = document.getElementById('amountInput').value
+	let category = document.getElementById('categoryInput')
+	let expense = document.createElement('li')
+	let spanNameCreate = document.createElement('span')
+	let spanExpenseCreate = document.createElement('span')
+	let nameExpense = document.createElement('span')
+	let costExpense = document.createElement('span')
+	let cancelExpenseIcon = document.createElement('i')
+	let icon = document.createElement('i')
+	let redList = document.getElementById('redList')
+
+	spanNameCreate.classList.add('name')
+	spanExpenseCreate.classList.add('expensesAmount')
+	cancelExpenseIcon.classList.add('fa-solid', 'fa-xmark', 'x')
+
+	if (category.value == 'shopping') {
+		icon.classList.add('fa-solid', 'fa-cart-shopping')
+		nameExpense.innerText = nameTransaction
+		costExpense.innerText = amountTransaction
+		spanNameCreate.append(icon, nameExpense)
+		expense.appendChild(spanNameCreate)
+		spanExpenseCreate.append(costExpense, cancelExpenseIcon)
+		expense.appendChild(spanExpenseCreate)
+		redList.appendChild(expense)
 	}
-})
-
-saveButton.addEventListener('click', () => {
-	if (category.value !== 'none') {
+	if (category.value == 'fuel') {
+		icon.classList.add('fa-solid', 'fa-gas-pump')
+		nameExpense.innerText = nameTransaction
+		costExpense.innerText = amountTransaction
+		spanNameCreate.append(icon, nameExpense)
+		expense.appendChild(spanNameCreate)
+		spanExpenseCreate.append(costExpense, cancelExpenseIcon)
+		expense.appendChild(spanExpenseCreate)
+		redList.appendChild(expense)
+	}
+	if (category.value == 'other') {
+		icon.classList.add('fa-solid', 'fa-note-sticky')
+		nameExpense.innerText = nameTransaction
+		costExpense.innerText = amountTransaction
+		spanNameCreate.append(icon, nameExpense)
+		expense.appendChild(spanNameCreate)
+		spanExpenseCreate.append(costExpense, cancelExpenseIcon)
+		expense.appendChild(spanExpenseCreate)
+		redList.appendChild(expense)
 	}
 
 	if ((newTransactionSection.style.display = 'block')) {
@@ -23,12 +56,19 @@ saveButton.addEventListener('click', () => {
 	} else {
 		newTransactionSection.style.display = 'block'
 	}
-})
+}
 
 cancelButton.addEventListener('click', () => {
 	if ((newTransactionSection.style.display = 'block')) {
 		newTransactionSection.style.display = 'none'
 	} else {
 		newTransactionSection.style.display = 'block'
+	}
+})
+addTransactionButton.addEventListener('click', () => {
+	if ((newTransactionSection.style.display = 'none')) {
+		newTransactionSection.style.display = 'block'
+	} else {
+		newTransactionSection.style.display = 'none'
 	}
 })
