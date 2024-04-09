@@ -3,10 +3,14 @@ let newTransactionSection = document.getElementById('newTransaction')
 let saveButton = document.getElementById('save')
 let cancelButton = document.getElementById('cancel')
 const category = document.getElementById('categoryInput')
+const redList = document.getElementById('redList')
 
-let greenIndex = 0;
+ let index = 0;
+ 
+
+const fundsArray = [];
 const availableFunds = document.getElementById('availableFunds')
-let avFunds = Number(availableFunds.innerText)
+//let avFunds = Number(availableFunds.innerText)
 
 saveButton.addEventListener('click', () => {
 	const nameTransaction = document.getElementById('nameInput').value
@@ -18,84 +22,44 @@ saveButton.addEventListener('click', () => {
 		const nameSpan = document.createElement('span');
         nameSpan.className = 'name';
         nameSpan.innerHTML = `<i class="fa-solid fa-money-bill-1-wave"></i>${nameTransaction}`;
-
         const incomeAmountSpan = document.createElement('span');
-		
-        incomeAmountSpan.className = 'incomeAmount ' + greenIndex;
+        incomeAmountSpan.className = 'incomeAmount ' + index;
         incomeAmountSpan.innerHTML = `${amount} zł<i class="fa-solid fa-xmark x"></i>`;
-		greenIndex++;
-
-		console.log(greenIndex)
-
-        
+		index++;
         incomeList.appendChild(nameSpan);
         incomeList.appendChild(incomeAmountSpan);
-
-        
         greenList.appendChild(incomeList); 
 
-		avFunds+= Number(amount);
-		availableFunds.innerText = avFunds;
+		fundsArray.push(Number(amount))
+		// avFunds+= Number(amount);
+		// availableFunds.innerText = avFunds;
+	}else if (category.value!='none'){
+		const nameSpan = document.createElement('span');
+        nameSpan.className = 'name';
+
+		if (category.value == 'shopping'){nameSpan.innerHTML = `<i class="fa-solid fa-cart-shopping"></i>${nameTransaction}`;}
+		if (category.value == 'fuel'){nameSpan.innerHTML = `<i class="fa-solid fa-gas-pump"></i>${nameTransaction}`;}
+		if (category.value == 'other'){nameSpan.innerHTML = `<i class="fa-solid fa-note-sticky"></i>${nameTransaction}`;}
+		
+		const outcomeAmountSpan = document.createElement('span');
+		outcomeAmountSpan.className = 'expensesAmount ' + index;
+		outcomeAmountSpan.innerHTML = `${amount} zł<i class="fa-solid fa-xmark x"></i>`;
+		index++;
+		incomeList.appendChild(nameSpan);
+        incomeList.appendChild(outcomeAmountSpan);
+        redList.appendChild(incomeList); 
+
+		fundsArray.push(Number(-amount))
+		console.log(fundsArray)
 	}
 	
-	console.log(avFunds)
-	})
-
-
-function addNewExpense() {
-	let nameTransaction = document.getElementById('nameInput').value
-	let amountTransaction = document.getElementById('amountInput').value
-	let category = document.getElementById('categoryInput')
-	let expense = document.createElement('li')
-	let spanNameCreate = document.createElement('span')
-	let spanExpenseCreate = document.createElement('span')
-	let nameExpense = document.createElement('span')
-	let costExpense = document.createElement('span')
-	let cancelExpenseIcon = document.createElement('i')
-	let icon = document.createElement('i')
-	let redList = document.getElementById('redList')
-
-	spanNameCreate.classList.add('name')
-	spanExpenseCreate.classList.add('expensesAmount')
-	cancelExpenseIcon.classList.add('fa-solid', 'fa-xmark', 'x')
-
-	if (category.value == 'shopping') {
-		icon.classList.add('fa-solid', 'fa-cart-shopping')
-		nameExpense.innerText = nameTransaction
-		costExpense.innerText = amountTransaction
-		spanNameCreate.append(icon, nameExpense)
-		expense.appendChild(spanNameCreate)
-		spanExpenseCreate.append(costExpense, cancelExpenseIcon)
-		expense.appendChild(spanExpenseCreate)
-		redList.appendChild(expense)
-	}
-	if (category.value == 'fuel') {
-		icon.classList.add('fa-solid', 'fa-gas-pump')
-		nameExpense.innerText = nameTransaction
-		costExpense.innerText = amountTransaction
-		spanNameCreate.append(icon, nameExpense)
-		expense.appendChild(spanNameCreate)
-		spanExpenseCreate.append(costExpense, cancelExpenseIcon)
-		expense.appendChild(spanExpenseCreate)
-		redList.appendChild(expense)
-	}
-	if (category.value == 'other') {
-		icon.classList.add('fa-solid', 'fa-note-sticky')
-		nameExpense.innerText = nameTransaction
-		costExpense.innerText = amountTransaction
-		spanNameCreate.append(icon, nameExpense)
-		expense.appendChild(spanNameCreate)
-		spanExpenseCreate.append(costExpense, cancelExpenseIcon)
-		expense.appendChild(spanExpenseCreate)
-		redList.appendChild(expense)
-	}
-
 	if ((newTransactionSection.style.display = 'block')) {
 		newTransactionSection.style.display = 'none'
 	} else {
 		newTransactionSection.style.display = 'block'
 	}
-}
+	})
+
 
 cancelButton.addEventListener('click', () => {
 	if ((newTransactionSection.style.display = 'block')) {
@@ -112,3 +76,6 @@ addTransactionButton.addEventListener('click', () => {
 	}
 })
 
+//tablica z funduszem ma kwote indeksowana wedle zmiennej index w liscie [wystarczy usunac odpowiadajacy index]
+//podsumowanie kwot za pomoca metody czyzaka [dodawanie wszystkich elementow tablicy]
+//usuwanie tresci z formularzy
