@@ -9,8 +9,8 @@ const redList = document.getElementById('redList')
  
 
 const fundsArray = [];
-const availableFunds = document.getElementById('availableFunds')
-//let avFunds = Number(availableFunds.innerText)
+let availableFunds = document.getElementById('availableFunds')
+let avFunds = Number(availableFunds.innerText)
 
 saveButton.addEventListener('click', () => {
 	const nameTransaction = document.getElementById('nameInput').value
@@ -31,8 +31,7 @@ saveButton.addEventListener('click', () => {
         greenList.appendChild(incomeList); 
 
 		fundsArray.push(Number(amount))
-		// avFunds+= Number(amount);
-		// availableFunds.innerText = avFunds;
+		
 	}else if (category.value!='none'){
 		const nameSpan = document.createElement('span');
         nameSpan.className = 'name';
@@ -58,6 +57,13 @@ saveButton.addEventListener('click', () => {
 	} else {
 		newTransactionSection.style.display = 'block'
 	}
+
+	let sum=0;
+	for (let i = 0; i < fundsArray.length; i++) {
+        sum += fundsArray[i];
+		availableFunds.innerText = sum;
+    }
+	console.log(sum)
 	})
 
 
@@ -77,5 +83,5 @@ addTransactionButton.addEventListener('click', () => {
 })
 
 //tablica z funduszem ma kwote indeksowana wedle zmiennej index w liscie [wystarczy usunac odpowiadajacy index]
-//podsumowanie kwot za pomoca metody czyzaka [dodawanie wszystkich elementow tablicy]
+
 //usuwanie tresci z formularzy
