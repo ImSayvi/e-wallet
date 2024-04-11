@@ -5,6 +5,7 @@ let cancelButton = document.getElementById('cancel')
 const category = document.getElementById('categoryInput')
 const redList = document.getElementById('redList')
 
+
  let index = 0;
  
 
@@ -64,6 +65,13 @@ saveButton.addEventListener('click', () => {
 		availableFunds.innerText = sum;
     }
 	console.log(sum)
+
+	
+const xButton = document.querySelector('.fa-solid.fa-xmark.x')
+xButton.addEventListener('click', () => {
+	console.log("ok")
+	xButton.parentNode.parentNode.remove();
+})
 	})
 
 
@@ -82,6 +90,7 @@ addTransactionButton.addEventListener('click', () => {
 	}
 })
 
-//tablica z funduszem ma kwote indeksowana wedle zmiennej index w liscie [wystarczy usunac odpowiadajacy index]
 
+//tablica z funduszem ma kwote indeksowana wedle zmiennej index w liscie [wystarczy podmienic odpowiadajacy index na 0 (żeby nie zminily sie pozostale numery indeksow)]
+//do usuniecia wszystkiego uzyc querySelectorAll
 //usuwanie tresci z formularzy
