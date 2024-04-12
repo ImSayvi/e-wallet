@@ -24,7 +24,8 @@ saveButton.addEventListener('click', () => {
         nameSpan.className = 'name';
         nameSpan.innerHTML = `<i class="fa-solid fa-money-bill-1-wave"></i>${nameTransaction}`;
         const incomeAmountSpan = document.createElement('span');
-        incomeAmountSpan.className = 'incomeAmount ' + index;
+        incomeAmountSpan.className = 'incomeAmount ' 
+		incomeAmountSpan.setAttribute('id', index) //zamiana z incomeAmountSpan.className = 'incomeAmount ' +index;
         incomeAmountSpan.innerHTML = `${amount} zł<i class="fa-solid fa-xmark x"></i>`;
 		index++;
         incomeList.appendChild(nameSpan);
@@ -42,7 +43,8 @@ saveButton.addEventListener('click', () => {
 		if (category.value == 'other'){nameSpan.innerHTML = `<i class="fa-solid fa-note-sticky"></i>${nameTransaction}`;}
 		
 		const outcomeAmountSpan = document.createElement('span');
-		outcomeAmountSpan.className = 'expensesAmount ' + index;
+		outcomeAmountSpan.className = 'expensesAmount '
+		outcomeAmountSpan.setAttribute('id', index)
 		outcomeAmountSpan.innerHTML = `${amount} zł<i class="fa-solid fa-xmark x"></i>`;
 		index++;
 		incomeList.appendChild(nameSpan);
@@ -58,6 +60,14 @@ saveButton.addEventListener('click', () => {
 	} else {
 		newTransactionSection.style.display = 'block'
 	}
+	const xButton = document.querySelector('.fa-solid.fa-xmark.x')
+	xButton.addEventListener('click', () => {
+		
+		let downloadIndex = xButton.parentElement.id
+		console.log(downloadIndex)
+		fundsArray[downloadIndex] = 0
+		xButton.parentNode.parentNode.remove();
+	})
 
 	let sum=0;
 	for (let i = 0; i < fundsArray.length; i++) {
@@ -67,10 +77,7 @@ saveButton.addEventListener('click', () => {
 	console.log(sum)
 
 	
-const xButton = document.querySelector('.fa-solid.fa-xmark.x')
-xButton.addEventListener('click', () => {
-	xButton.parentNode.parentNode.remove();
-})
+
 	})
 
 
