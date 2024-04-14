@@ -121,6 +121,6 @@ addTransactionButton.addEventListener('click', () => {
 })
 
 
-//tablica z funduszem ma kwote indeksowana wedle zmiennej index w liscie [wystarczy podmienic odpowiadajacy index na 0 (żeby nie zminily sie pozostale numery indeksow)]
+
 //do usuniecia wszystkiego uzyc querySelectorAll
-//usuwanie tresci z formularzyerthj
+//usuwanie tresci z formularzy
