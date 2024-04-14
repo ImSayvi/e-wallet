@@ -60,14 +60,38 @@ saveButton.addEventListener('click', () => {
 	} else {
 		newTransactionSection.style.display = 'block'
 	}
-	const xButton = document.querySelector('.fa-solid.fa-xmark.x')
-	xButton.addEventListener('click', () => {
+	// const xButton = document.querySelector('.fa-solid.fa-xmark.x')
+	// xButton.addEventListener('click', () => {
 		
-		let downloadIndex = xButton.parentElement.id
-		console.log(downloadIndex)
-		fundsArray[downloadIndex] = 0
-		xButton.parentNode.parentNode.remove();
-	})
+	// 	let downloadIndex = xButton.parentElement.id
+	// 	console.log(downloadIndex)
+	// 	fundsArray[downloadIndex] = 0
+	// 	xButton.parentNode.parentNode.remove();
+	//  })
+
+	const xButton = incomeList.children[1].children[0];
+    console.log(xButton)
+    xButton.addEventListener('click', () => {
+
+        const amountElement = xButton.parentElement.textContent;        
+        let amount = 0;
+        if(amountElement){
+            amount = amountElement.match(/\d+(\.\d+)?/g).map(Number)[0];
+        }
+
+        const availableFundsElement = document.getElementById('availableFunds');
+        let availableFunds = parseFloat(availableFundsElement.textContent);
+        availableFunds -= amount;
+        availableFundsElement.textContent = availableFunds;
+
+    
+        let downloadIndex = xButton.parentElement.id;
+        console.log(downloadIndex);
+        
+        xButton.parentNode.parentNode.remove();
+
+        
+    })
 
 	let sum=0;
 	for (let i = 0; i < fundsArray.length; i++) {
